@@ -6,4 +6,5 @@ RUN ["apt-get","install","-y", "apache2"]
 RUN apt-get install -y iputils-ping
 WORKDIR "/var/www/html"
 EXPOSE 80
-CMD service apache2 start
+#CMD [“/usr/sbin/apache2”, “-D”, “FOREGROUND”]
+CMD apachectl -D FOREGROUND
